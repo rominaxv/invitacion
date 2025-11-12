@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.invitation-card {
+    background: rgba(255, 255, 255, 0.95);
+    overflow: hidden;
+    position: relative;
+}
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('Top image.jpg') right 30%/120% no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 100px;
+    text-align: center;
+    position: relative;
+}
+
+.hero > div {
+    padding-top: 150px;
+}
+
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5.5em;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero p.subtitle {
+    font-size: 1.8em;
+    color: #fff;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.intro {
+    background: linear-gradient(10deg, #f84f4f, #ffc5c3);
+    padding: 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.intro p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.content {
+    padding: 40px;
+}
+
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para cuadrícula 2x2 */
+    grid-auto-rows: auto;
+    gap: 20px;
+    margin: 0 0 30px 0;
+}
+
+.detail-card, .detail-mapa {
+    background-size: cover; /* Ajusta el tamaño del background */
+    background-position: center; /* Centra la imagen de fondo */
+    border-radius: 10px;
+    height: 300px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer; /* indicar que es clicable */
+    text-decoration: none; /* si es un <a>, quitar subrayado */
+}
+
+.detail-card:hover, .detail-mapa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.detail-card i, .detail-mapa i {
+    padding-top: 50px; /* baja el contenido para no tapar la cara */
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #2991c5;
+}
+
+.steve {
+    background-color: rgba(255, 145, 200, 0.7);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.detail-card h3, .detail-mapa h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #1f1f1f;
+}
+
+.detail-card p, .detail-mapa p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #7912a1;
+}
+
+.extras {
+    background: linear-gradient(10deg, #f84f4f, #ffc5c3);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.description {
+    text-align: center;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.confirmation {
+    text-align: center;
+    margin: 0;
+}
+
+.confirmation h2 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: white;
+}
+
+.sobre {
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    color: #f84f4f;
+}
+
+/*.cuadro {
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+    min-height: 150px;
+    background: #fcdf81;
+    border-radius: 10px;
+    border: 2px solid #b49737;
+    position: relative;  necesario para posicionar el SVG overlay 
+    overflow: hidden;    recortar el SVG si excede 
+
+}*/
+
+/* Flor centrada dentro del cuadro */
+/*.flor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;  centra horizontalmente 
+    align-items: center;      centra verticalmente 
+    pointer-events: none;     evita interacciones si hay overlay 
+    position: relative;       para que z-index funcione 
+    z-index: 2;               mantener la flor sobre las líneas 
+}
+
+.flor img {
+    max-width: 70%;
+    max-height: 70%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+}*/
+
+/* SVG overlay que dibuja las líneas del sobre */
+/*.sobre-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;  por debajo de .flor (z-index:2) 
+    pointer-events: none;
+}*/
+
+/*.sobre-lines line {
+    stroke: #b49737;
+    stroke-width: 0.8;  en unidades del viewBox (escalará) 
+    stroke-linecap: round;
+}*/
+
+/* Ajuste para mejorar grosor visual en pantallas grandes */
+/*@media (min-width: 800px) {
+    .sobre-lines line { stroke-width: 1.2; }
+}
+
+@media (max-width: 800px) {
+    .cuadro { min-width: 200px; min-height: 150px; }
+    .flor img { max-width: 85%; max-height: 85%; }
+}*/
+
+.countdown {
+    text-align: center;
+    padding: 40px 20px;
+    padding-top: 20px;
+    font-size: 2em;
+}
+
+.countdown p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #083da0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#timer {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #f84f4f;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+#timer span {
+    display: inline-block;
+    min-width: 300px;
+    padding: 10px;
+    background: #9fc1ff;
+    border-radius: 10px;
+    border: 1px solid #0039a3;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(270deg, #94b4f5b9, #f856ebe1, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease-in-out infinite;
+    color: white;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0;
+}
+
+.leafs {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.5s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: #6a11cb;
+}
+
+.modal p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.close-modal {
+    background: #f0f0f0;
+    color: #555;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    }
+
+.close-modal:hover {
+    background: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 50px 20px;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 4em;
+        padding-top: 100px;
+        margin-bottom: -10px;
+    }
+
+    .hero p.subtitle {
+        font-size: 1.5em;
+        padding: 10px 20px;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .content {
+        padding: 25px;
+    }
+
+    .event-details {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+}
