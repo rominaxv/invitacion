@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estás invitado :)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="hero">
+            <h1>Romina Salazar</h1>
+            <p class="subtitle">Mi fiesta de cumpleaños</p>
+        </div>
+
+        <div class="intro">
+            <h1>¡Estás invitado a celebrar mis XV años! Una noche llena de magia, música y diversión.</h1>
+            <p>Te esperamos</p>
+        </div>
+
+        <div class="content">
+            <div class="event-details">
+                <div class="detail-card" style="background-image: url('grid\ image\ 1.jpg');">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class ="steve">
+                        <h3>FECHA</h3>
+                        <p>06 de Diciembre, 2025</p>
+                    </div>
+                </div>
+                <div class="detail-card" style="background-image: url('grid\ image\ 2.jpg');">
+                    <i class="fas fa-clock"></i>
+                    <div class ="steve">
+                        <h3>HORA</h3>
+                        <p>18:00 hrs</p>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/eY6jo1bCUbJDwFfX8?g_st=aw" target="_blank" rel="noopener noreferrer" class="detail-mapa" style="background-image: url('grid\ image\ 3.jpg');">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class ="steve">
+                        <h3>LUGAR</h3>
+                        <p>La Milpa Salgado</p>
+                        <p>Haz click aquí</p>
+                    </div>
+                </a>
+                <div class="detail-card" style="background-image: url('grid\ image\ 4.jpg');">
+                    <i class="fas fa-user-friends"></i>
+                    <div class ="steve">
+                        <h3>DRESSCODE</h3>
+                        <p>Formal</p>
+                    </div>
+                    <p style="color: rgb(255, 0, 64); font-size: 15px;">RESERVE AZUL CIELO PARA LA FESTEJADA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="extras">
+        <div class="description">
+            <p>Nos complace invitarte a una celebración muy especial donde compartiremos momentos inolvidables. Tu presencia hará este evento aún más significativo.</p>
+            <p>¡Esperamos contar contigo para hacer de esta velada algo extraordinario!</p>
+        </div>
+
+        <div class="confirmation">
+            <h2>Te pedimos confirmar antes del 30 de noviembre</h2>
+            <div class="btn-group">
+                <button class="btn btn-primary" id="confirmBtn">
+                    <i class="fas fa-check-circle"></i> Confirmar Asistencia
+                </button>
+                <button class="btn btn-secondary" id="detailsBtn">
+                    <i class="fas fa-info-circle"></i> Más Detalles
+                </button>
+            </div>
+        </div>
+
+        <div class="description">
+            <p><strong>NO NIÑOS</strong></p>
+        </div>
+    </div>
+
+    <div class="sobre">
+        <h3>¡Lluvia de sobres! <i class="fa-solid fa-envelope"></i></h3>
+<!--    <div class="cuadro"> -->
+            <!-- SVG overlay: líneas desde ambas esquinas superiores hacia el centro (figura de sobre) -->
+<!--        <svg class="sobre-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"> -->
+                <!-- Línea desde esquina superior izquierda al centro -->
+<!--            <line x1="0" y1="0" x2="50" y2="50" /> -->
+                <!-- Línea desde esquina superior derecha al centro -->
+<!--            <line x1="100" y1="0" x2="50" y2="50" /> -->
+<!--        </svg> -->
+
+<!--        <div class="flor"> -->
+<!--            <img src="flor.png" alt="flor"> -->
+<!--            </div> -->
+<!--    </div> -->
+    </div>
+
+    <div class="countdown">
+        <p>Faltan para el gran día...</p>
+        <div id="timer"></div>
+    </div>
+    
+    <!-- Modal de confirmación -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <h2>Confirmar Asistencia</h2>
+            <p>Por favor, completa la siguiente información para confirmar tu participación:</p>
+            
+            <form id="confirmationForm">
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Número de acompañantes:</label>
+                    <input type="number" id="guests" min="1" max="7" value="1">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Enviar Confirmación
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal de detalles -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <h2>Detalles del Evento</h2>
+            <p><strong>Programa:</strong></p>
+            <ul style="text-align: left; margin-bottom: 20px;">
+                <li>18:00 - Fotos y bienvenida</li>
+                <li>19:00 - Cena</li>
+                <li>19:50 - Vals</li>
+                <li>20:00 - Show sorpresa</li>
+                <li>02:00 - Fin</li>
+            </ul>
+            <p>Te recordamos evitar usar el color AZUL CLARO, pero además confirma antes del 30 de noviembre. ¡Disfruta de nuestro evento!</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
