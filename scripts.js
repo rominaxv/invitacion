@@ -33,7 +33,7 @@ confirmationForm.addEventListener('submit', (e) => {
 
     // Construir enlace de WhatsApp (wa.me) con el número y el texto codificado
     const phone = '526623415601'; // número provisto
-    const text = `Hola, confirmo mi asistencia. Nombre: ${name}. Número de acompañantes: ${guests}.`;
+    const text = `Hola, confirmo mi asistencia. Nombre: ${name}. Número de asistentes: ${guests}.`;
     const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`; //https://wa.me/526623415601?text=Gracias%20por%20confirmar.%20Esperamos%20que%20lo%20disfrutes.%0ANombre%3A
 
     // Abrir WhatsApp en nueva pestaña/ventana
@@ -146,4 +146,5 @@ const updateCountdown = () => {
 };
 
 updateCountdown();
+
 setInterval(updateCountdown, 1000);
